@@ -1,10 +1,10 @@
 ﻿@model wardrobe.Models.Tops
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add a Top to Your Closet";
 }
 
-<h2>Create</h2>
+<h2>Add a Top To Your Closet</h2>
 
 
 @using (Html.BeginForm()) 
@@ -58,7 +58,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Season, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Season, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("Season", new List<SelectListItem>
+           {
+               new SelectListItem {Text="Winter", Value="Winter", Selected=true },
+               new SelectListItem {Text="Spring", Value="Spring" },
+               new SelectListItem {Text="Summer", Value="Summer" },
+               new SelectListItem {Text="Autumn", Value="Autumn" },
+               new SelectListItem {Text="Year Round", Value="Year Round" }
+           }, "Select the Season")
                 @Html.ValidationMessageFor(model => model.Season, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,14 +73,24 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Occasion, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Occasion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("Occasion", new List<SelectListItem>
+           {
+               new SelectListItem {Text="Casual", Value="Casual", Selected=true },
+               new SelectListItem {Text="Business-Casual", Value="Business-Casual" },
+               new SelectListItem {Text="Night Out", Value="Night Out" },
+               new SelectListItem {Text="Business", Value="Business" },
+               new SelectListItem {Text="Formal", Value="Formal" },
+               new SelectListItem {Text="Athletic/Workout", Value="Athletic/Workout" },
+               new SelectListItem {Text="Junk/Housework", Value="Junk/Housework" },
+               new SelectListItem {Text="Pajamas/Being Lazy", Value="Pajamas/Being Lazy" }
+           }, "Select the Occasion")
                 @Html.ValidationMessageFor(model => model.Occasion, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Add Top To Closet" class="btn btn-default" />
             </div>
         </div>
     </div>
