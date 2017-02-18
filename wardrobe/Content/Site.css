@@ -1,24 +1,85 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-size: contain;
+    background-image: url('Images/pexels-photo-25641.jpg');
+    font-family: 'Raleway', sans-serif !important;
+    color: #340000;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+/*Navbar Styling*/
+.contain-nav{
+    background-color: #808080;
+}
+
+.container > .navbar-header a, .container > .navbar-collapse a {
+ font-weight: bolder;
+       color: #340000;
+}
+
+.container > .navbar-header a{
+    font-size: 22px;
+}
+
+.navbar-header .glyphicon{
+    vertical-align: bottom;
+    font-size: x-large;
+}
+
+.navbar-nav{
+    float: right;
+}
+
+.navbar-nav .align-right {
+    float: right;
+}
+
+.type-views{
+    background-color: #808080;
+    opacity: 0.95;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.type-views a{
+    color: #1f0046;
+    text-decoration: none;
+}
+
+.jumbotron{
+    margin-bottom: 0px;
+    background-color: #340000;
+    color: white;
+}
+
+
+/*Footer Styling*/
+#footer-style{
+    padding-top: 10px;
+    text-align: center;
+    font-weight: bolder;
+    background-color: #808080;
+    opacity: 0.8;
 }

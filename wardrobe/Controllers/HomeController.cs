@@ -15,14 +15,14 @@ namespace wardrobe.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Theodosia writes me a letter ev'ry day.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Tip of My Tongue";
 
             return View();
         }
