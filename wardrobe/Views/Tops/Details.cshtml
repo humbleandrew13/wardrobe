@@ -1,74 +1,68 @@
 ﻿@model wardrobe.Models.Tops
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Top Details";
 }
+<div class="type-views">
+    <h2>@Html.DisplayFor(model => model.TopNameDescription)</h2>
 
-<h2>Details</h2>
+    <div>
+        <hr />
+        <img class="img-responsive details-shrink" src="@Html.DisplayFor(model => model.PhotoLink)" alt="@Html.DisplayFor(model => model.TopNameDescription)">
 
-<div>
-    <h4>Tops</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TopNameDescription)
-        </dt>
+        
+             @*<dt>
+                @Html.DisplayNameFor(model => model.PhotoLink)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TopNameDescription)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PhotoLink)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PhotoLink)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ColorPrimary)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PhotoLink)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ColorPrimary)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ColorPrimary)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ColorSecondary)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ColorPrimary)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ColorSecondary)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ColorSecondary)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ColorTertiary)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ColorSecondary)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ColorTertiary)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ColorTertiary)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Season)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ColorTertiary)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Season)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Season)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Occasion)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Season)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Occasion)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Occasion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Occasion)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.TopID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TopID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

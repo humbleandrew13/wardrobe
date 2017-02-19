@@ -3,7 +3,7 @@
     padding-bottom: 20px;
     background-size: contain;
     background-image: url('Images/pexels-photo-25641.jpg');
-    font-family: 'Raleway', sans-serif !important;
+    font-family: 'Raleway', sans-serif !important; /*Want this font EVERYWHERE*/
     color: #340000;
 }
 
@@ -50,6 +50,7 @@ textarea {
     float: right;
 }
 
+/*Made a class to give backgrounds to most boxes*/
 .type-views{
     background-color: #808080;
     opacity: 0.95;
@@ -73,6 +74,28 @@ textarea {
     background-color: #340000;
     color: white;
 }
+
+
+/*Make thumbnail pics smaller*/
+.thumbnail .shrink{
+    max-width: 50%;
+    max-height: 50%;
+}
+
+/*Make details pics smaller*/
+.details-shrink{
+    max-width: 40%;
+    max-height: 40%;
+    opacity: 1.0;
+}
+
+/*Selection Boxes were centering*/
+select{
+    align-items: inherit;
+    float:left;
+}
+
+
 
 
 /*Footer Styling*/

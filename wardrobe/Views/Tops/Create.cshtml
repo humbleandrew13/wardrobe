@@ -3,62 +3,61 @@
 @{
     ViewBag.Title = "Add a Top to Your Closet";
 }
+<div class="type-views">
+    <h2>Add a Top To Your Closet</h2>
 
-<h2>Add a Top To Your Closet</h2>
 
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Tops</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.TopNameDescription, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TopNameDescription, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TopNameDescription, "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.TopNameDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TopNameDescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TopNameDescription, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PhotoLink, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PhotoLink, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PhotoLink, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhotoLink, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PhotoLink, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PhotoLink, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ColorPrimary, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ColorPrimary, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ColorPrimary, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.ColorPrimary, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ColorPrimary, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ColorPrimary, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ColorSecondary, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ColorSecondary, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ColorSecondary, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.ColorSecondary, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ColorSecondary, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ColorSecondary, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ColorTertiary, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ColorTertiary, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ColorTertiary, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.ColorTertiary, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ColorTertiary, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ColorTertiary, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Season, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Season", new List<SelectListItem>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Season, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Season", new List<SelectListItem>
            {
                new SelectListItem {Text="Winter", Value="Winter", Selected=true },
                new SelectListItem {Text="Spring", Value="Spring" },
@@ -66,14 +65,14 @@
                new SelectListItem {Text="Autumn", Value="Autumn" },
                new SelectListItem {Text="Year Round", Value="Year Round" }
            }, "Select the Season")
-                @Html.ValidationMessageFor(model => model.Season, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Season, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Occasion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Occasion", new List<SelectListItem>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Occasion, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Occasion", new List<SelectListItem>
            {
                new SelectListItem {Text="Casual", Value="Casual", Selected=true },
                new SelectListItem {Text="Business-Casual", Value="Business-Casual" },
@@ -84,22 +83,22 @@
                new SelectListItem {Text="Junk/Housework", Value="Junk/Housework" },
                new SelectListItem {Text="Pajamas/Being Lazy", Value="Pajamas/Being Lazy" }
            }, "Select the Occasion")
-                @Html.ValidationMessageFor(model => model.Occasion, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Occasion, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Add Top To Closet" class="btn btn-default" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Add Top To Closet" class="btn btn-default pull-left" />
+                </div>
             </div>
         </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to Tops", "Index")
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

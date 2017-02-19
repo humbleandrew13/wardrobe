@@ -171,9 +171,17 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\accessories.jpeg" />
+    <Content Include="Content\Images\AccessoriesIcon.png" />
+    <Content Include="Content\Images\BottomsIcon.png" />
+    <Content Include="Content\Images\fashion-clothes-hanger-clothes-rack-clothing.jpeg" />
+    <Content Include="Content\Images\jeans-pants-blue-shop-52518.jpeg" />
     <Content Include="Content\Images\pexels-photo-25641.jpg" />
     <Content Include="Content\Images\pexels-photo-26546.jpg" />
     <Content Include="Content\Images\pexels-photo-26549.jpg" />
+    <Content Include="Content\Images\TopsIcon.png" />
+    <Content Include="Content\Images\shoes.jpeg" />
+    <Content Include="Content\Images\ShoesIcon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

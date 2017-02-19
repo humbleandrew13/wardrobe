@@ -15,7 +15,7 @@ namespace wardrobe.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Theodosia writes me a letter ev'ry day.";
+            ViewBag.Message = "Just a little bit about us.";
 
             return View();
         }
