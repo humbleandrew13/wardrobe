@@ -11,16 +11,24 @@ namespace wardrobe.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Accessories
     {
         public int AccessoryID { get; set; }
+        [Display(Name = "Name or Description of Accessory")]
         public string AccessoryNameDescription { get; set; }
+        [Display(Name = "Direct Link to a Photo of the Accessory (not required)")]
         public string PhotoLink { get; set; }
+        [Display(Name = "Primary Color")]
         public string ColorPrimary { get; set; }
+        [Display(Name = "Secondary Color (if necessary)")]
         public string ColorSecondary { get; set; }
+        [Display(Name = "Tertiary Color (if necessary)")]
         public string ColorTertiary { get; set; }
+        [Display(Name = "Time of Year to Wear It")]
         public string Season { get; set; }
+        [Display(Name = "The Occasion to Wear It")]
         public string Occasion { get; set; }
     }
 }

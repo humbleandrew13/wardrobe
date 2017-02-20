@@ -6,7 +6,7 @@
 <div class="type-views">
     <h2>Add a Top To Your Closet</h2>
 
-
+@*This is a lot of the default stuff with the background added by putting everything in a div*@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -57,6 +57,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Season, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
+                    @*Added dropdown lists to limit user selection*@
                     @Html.DropDownList("Season", new List<SelectListItem>
            {
                new SelectListItem {Text="Winter", Value="Winter", Selected=true },

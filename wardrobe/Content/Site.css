@@ -22,36 +22,35 @@ textarea {
     max-width: 280px;
 }
 
-
 /*Navbar Styling*/
-.contain-nav{
+.contain-nav {
     background-color: #808080;
 }
 
 .container > .navbar-header a, .container > .navbar-collapse a {
- font-weight: bolder;
-       color: #340000;
+    font-weight: bolder;
+    color: #340000;
 }
 
-.container > .navbar-header a{
+.container > .navbar-header a {
     font-size: 22px;
 }
 
-.navbar-header .glyphicon{
+.navbar-header .glyphicon {
     vertical-align: bottom;
     font-size: x-large;
 }
 
-.navbar-nav{
+.navbar-nav {
     float: right;
 }
 
-.navbar-nav .align-right {
-    float: right;
-}
+    .navbar-nav .align-right {
+        float: right;
+    }
 
-/*Made a class to give backgrounds to most boxes*/
-.type-views{
+/*Made a class to give backgrounds to most "boxes"*/
+.type-views {
     background-color: #808080;
     opacity: 0.95;
     text-align: center;
@@ -64,12 +63,13 @@ textarea {
     padding-right: 10px;
 }
 
-.type-views a{
-    color: #1f0046;
-    text-decoration: none;
-}
+    .type-views a {
+        color: #1f0046;
+        text-decoration: none;
+    }
 
-.jumbotron{
+    /*Got the jumbotron looking unique*/
+.jumbotron {
     margin-bottom: 0px;
     background-color: #340000;
     color: white;
@@ -77,29 +77,32 @@ textarea {
 
 
 /*Make thumbnail pics smaller*/
-.thumbnail .shrink{
+.thumbnail .shrink {
     max-width: 50%;
     max-height: 50%;
+    opacity: 1;
 }
 
-/*Make details pics smaller*/
-.details-shrink{
-    max-width: 40%;
-    max-height: 40%;
-    opacity: 1.0;
+/*Make details pics bigger*/
+.details-shrink {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 1;
+}
+
+/*Making a few certain pieces of text bold*/
+.emboldened {
+    font-weight: bolder;
 }
 
 /*Selection Boxes were centering*/
-select{
+select {
     align-items: inherit;
-    float:left;
+    float: left;
 }
 
-
-
-
 /*Footer Styling*/
-#footer-style{
+#footer-style {
     padding-top: 10px;
     text-align: center;
     font-weight: bolder;

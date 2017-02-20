@@ -14,88 +14,30 @@
 
 <div class="type-views">
     <div class="row">
+        @*A loop to show all the items entered by the user*@
         @foreach (var item in Model)
         {
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
-                    <img class="img-responsive" src=@Url.Content(item.PhotoLink) alt="@Html.DisplayFor(modelItem => item.TopNameDescription)">
+                    @*If the user entered no photo link, it defaults to a pre-selected*@
+                    @if (item.PhotoLink == null)
+                    {
+                        <img class="img-responsive" src="~/Content/Images/fashion-clothes-hanger-clothes-rack-clothing.jpeg" />
+                    }
+                    else
+                    {
+                        <img class="img-responsive" src=@Url.Content(item.PhotoLink) alt="@Html.DisplayFor(modelItem => item.TopNameDescription)">
+                    }
                     <div class="caption">
                         <h3>@Html.DisplayFor(modelItem => item.TopNameDescription)</h3>
-                        <p>@Html.ActionLink("Edit Details", "Edit", "Tops", new { id = item.TopID }, new { @class = "btn btn-sm btn-default" })
-                            @Html.ActionLink("View Details", "Details", "Tops", new { id = item.TopID }, new { @class = "btn btn-sm btn-default" })</p>
-                        <p>    @Html.ActionLink("Remove Top From Closet", "Delete", "Tops", new { id = item.TopID }, new { @class = "btn btn-sm btn-default" })</p>
-                    </div>
+                        <p>
+                            @Html.ActionLink("View Details", "Details", "Tops", new { id = item.TopID }, new { @class = "btn btn-sm btn-default" })
+                        @Html.ActionLink("Edit Details", "Edit", "Tops", new { id = item.TopID }, new { @class = "btn btn-sm btn-default" })
+                    </p>
+                    <p>    @Html.ActionLink("Remove Top From Closet", "Delete", "Tops", new { id = item.TopID }, new { @class = "btn btn-sm btn-default" })</p>
                 </div>
             </div>
+        </div>
         }
     </div>
 </div>
-
-
-
-
-@*@Html.ActionLink("Details", "Details", new { id = item.TopID })*@
-
-
-
-@*<div class="type-views">
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.TopNameDescription)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PhotoLink)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ColorPrimary)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ColorSecondary)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ColorTertiary)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Season)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Occasion)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TopNameDescription)
-                    </td>
-                    <td>
-                        <img class="img-responsive" src=@Url.Content(item.PhotoLink)>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ColorPrimary)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ColorSecondary)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ColorTertiary)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Season)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Occasion)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.TopID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.TopID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.TopID })
-                    </td>
-                </tr>
-            }
-
-        </table>
-    </div>*@
