@@ -26,9 +26,9 @@ namespace wardrobe.Models
         public string ColorSecondary { get; set; }
         [Display(Name = "Tertiary Color (if necessary)")]
         public string ColorTertiary { get; set; }
-        [Display(Name = "Time of Year to Wear It")]
+        [Display(Name = "Time of Year to Wear Them")]
         public string Season { get; set; }
-        [Display(Name = "The Occasion to Wear It")]
+        [Display(Name = "The Occasion to Wear Them")]
         public string Occasion { get; set; }
     }
 }

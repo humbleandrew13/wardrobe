@@ -1,74 +1,45 @@
 ﻿@model wardrobe.Models.Shoes
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Shoes Details";
 }
+<div class="type-views">
+    <h2>@Html.DisplayFor(model => model.ShoesNameDescription)</h2>
 
-<h2>Details</h2>
-
-<div>
-    <h4>Shoes</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ShoesNameDescription)
-        </dt>
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            @*If the user entered no photo link, it defaults to a pre-selected*@
+            @if (Model.PhotoLink == null)
+            {
+                <img class="img-responsive details-shrink" src="~/Content/Images/shoes.jpeg" />
+            }
+            else
+            {
+                <img class="img-responsive details-shrink" src="@Html.DisplayFor(model => model.PhotoLink)" alt="@Html.DisplayFor(model => model.ShoesNameDescription)">
+            }
+        </div>
+        <div class="col-md-3 col-lg-3" id="align-left">
+            @*If the user only entered one or two colors, the "nulls" are not displayed*@
+            <h4><span class="emboldened">Color(s):</span> @Html.DisplayFor(model => model.ColorPrimary)</h4>
+            @if (Model.ColorSecondary != null)
+            {
+                <h4>and @Html.DisplayFor(model => model.ColorSecondary)</h4>
+            }
 
-        <dd>
-            @Html.DisplayFor(model => model.ShoesNameDescription)
-        </dd>
+            @if (Model.ColorTertiary != null)
+            {
+                <h4>and @Html.DisplayFor(model => model.ColorTertiary)</h4>
+            }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PhotoLink)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhotoLink)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ColorPrimary)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ColorPrimary)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ColorSecondary)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ColorSecondary)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ColorTertiary)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ColorTertiary)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Season)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Season)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Occasion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Occasion)
-        </dd>
-
-    </dl>
+        </div>
+        <div class="col-md-3 col-lg-3" id="align-left">
+            <h4><span class="emboldened">@Html.DisplayNameFor(model => model.Season):</span> @Html.DisplayFor(model => model.Season)</h4>
+            <h4><span class="emboldened">@Html.DisplayNameFor(model => model.Occasion):</span> @Html.DisplayFor(model => model.Occasion)</h4>
+            <br /><br />
+            <p>@Html.ActionLink("Edit Details", "Edit", "Shoes", new { id = Model.ShoesID }, new { @class = "btn btn-default" })</p>
+            <p>@Html.ActionLink("Go Back to All Shoes", "Index", "Shoes", null, new { @class = "btn btn-default" })</p>
+            <p>@Html.ActionLink("Remove Shoes From Closet", "Delete", "Shoes", new { id = Model.ShoesID }, new { @class = "btn btn-default" })</p>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ShoesID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

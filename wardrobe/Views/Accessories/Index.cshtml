@@ -1,69 +1,43 @@
 ﻿@model IEnumerable<wardrobe.Models.Accessories>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Accessories";
 }
 
-<h2>Index</h2>
+<div class="type-views">
+    <h2>Accessories in Your Closet</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AccessoryNameDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhotoLink)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ColorPrimary)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ColorSecondary)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ColorTertiary)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Season)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Occasion)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Put a New Accessory In Your Closet", "Create")
+    </p>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AccessoryNameDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhotoLink)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ColorPrimary)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ColorSecondary)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ColorTertiary)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Season)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Occasion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AccessoryID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AccessoryID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AccessoryID })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="type-views">
+    <div class="row">
+        @*A loop to show all the items entered by the user*@
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    @*If the user entered no photo link, it defaults to a pre-selected*@
+                    @if (item.PhotoLink == null)
+                    {
+                        <img class="img-responsive" src="~/Content/Images/accessories.jpeg" />
+                    }
+                    else
+                    {
+                        <img class="img-responsive" src=@Url.Content(item.PhotoLink) alt="@Html.DisplayFor(modelItem => item.AccessoryNameDescription)">
+                    }
+                    <div class="caption">
+                        <h3>@Html.DisplayFor(modelItem => item.AccessoryNameDescription)</h3>
+                        <p>
+                            @Html.ActionLink("View Details", "Details", "Accessories", new { id = item.AccessoryID }, new { @class = "btn btn-sm btn-default" })
+                            @Html.ActionLink("Edit Details", "Edit", "Accessories", new { id = item.AccessoryID }, new { @class = "btn btn-sm btn-default" })
+                        </p>
+                        <p>    @Html.ActionLink("Remove Accessory From Closet", "Delete", "Accessories", new { id = item.AccessoryID }, new { @class = "btn btn-sm btn-default" })</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
